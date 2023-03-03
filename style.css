@@ -24,17 +24,6 @@ header h1 {
     padding-bottom: 20px;
 }
 
-main {
-    max-width: 1000px;
-
-    margin: auto;
-    padding: 20px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-}
-
 article {
     background-color: #21315a;
     padding: 15px;
@@ -50,4 +39,56 @@ h2 {
 
 p {
     color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 20px;
+
+    max-width: 960px;
+    margin: auto;
+    align-items: center;
+}
+
+section {
+    padding: 20px;
+}
+
+.section1 {
+    background-color: #242830;
+}
+
+.section2 {
+    background-color: #f5f7f8;
+}
+
+.section3 {
+    background-color: black;
+}
+
+@media (max-width: 750px) {
+    body {
+        min-width: 400px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .container > img {
+        order: 1;
+    }
+
+    header img {
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 40px;
+
+        padding: 10px;
+        padding-bottom: 8px;
+    }
 }
