@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s ease-out;
 }
 
 header {
@@ -41,18 +42,60 @@ p {
     color: white;
 }
 
+main {
+    position: relative;
+
+    max-width: 960px;
+    margin: auto;
+
+    overflow: hidden;
+}
+
+main > div {
+    display: flex;
+    transition: 0.3s ease-out;
+}
+
+.bi-chevron-left,
+.bi-chevron-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #94ce5a;
+    font-size: 34px;
+    background-color: #21315a;
+    border: #94ce5a 2px solid;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.bi-chevron-left {
+    left: 15px;
+}
+
+.bi-chevron-right {
+    right: 15px;
+}
+
 .container {
     display: grid;
     grid-template-columns: 7fr 5fr;
     gap: 20px;
 
-    max-width: 960px;
-    margin: auto;
     align-items: center;
 }
 
 section {
-    padding: 20px;
+    width: 100%;
+    flex-shrink: 0;
+    padding: 20px 80px;
 }
 
 .section1 {
@@ -65,6 +108,10 @@ section {
 
 .section3 {
     background-color: black;
+}
+
+.none {
+    display: none;
 }
 
 @media (max-width: 750px) {
