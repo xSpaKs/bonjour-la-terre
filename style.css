@@ -1,59 +1,86 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    transition: 0.5s ease-out;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    transition: background-color 0.9s ease-out;
 }
-
 header {
-    background-color: #21315a;
-    width: 100%;
-
     display: grid;
     align-items: end;
     justify-items: center;
-}
-
-header img {
-    width: 715px;
-    margin: auto;
-}
-
-header h1 {
-    color: #94ce5a;
-    font-size: 64px;
-    font-family: "Roboto", sans-serif;
-
-    padding-bottom: 20px;
-}
-
-article {
     background-color: #21315a;
-    padding: 15px;
 }
-
+h1 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 64px;
+    padding-bottom: 36px;
+}
 h2 {
-    font-size: 36px;
-    font-weight: 600;
-    color: #94ce5a;
-    padding-bottom: 10px;
+    font-weight: 900;
+    font-size: 32px;
+}
+h1,
+h2 {
     text-align: center;
+    color: #94ce5a;
 }
-
-p {
-    color: white;
+header > img,
+h1 {
+    grid-area: 1 / 1 / 2 / 2;
 }
-
+header > img {
+    max-width: 715px;
+}
 main {
-    position: relative;
-
     max-width: 960px;
     margin: auto;
-
     overflow: hidden;
+    position: relative;
+}
+.slides-container {
+    display: flex;
+
+    transition: 0.3s ease-out;
+}
+section {
+    padding: 20px 80px;
+
+    width: 100%;
+    flex-shrink: 0;
+
+    display: grid;
+    align-items: center;
+}
+.earth-and-moon {
+    background-color: #242830;
+}
+.earth-low-poly {
+    background-color: #f5f7f8;
+}
+.earth-pixel {
+    background-color: #000;
+}
+.container {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 20px;
+    align-items: center;
+}
+article {
+    background-color: #21315a;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
 }
 
-main > div {
-    display: flex;
-    transition: 0.3s ease-out;
+.bi-chevron-left {
+    left: 15px;
+}
+.bi-chevron-right {
+    right: 15px;
 }
 
 .bi-chevron-left,
@@ -63,79 +90,47 @@ main > div {
     transform: translateY(-50%);
 
     color: #94ce5a;
-    font-size: 34px;
-    background-color: #21315a;
     border: #94ce5a 2px solid;
-
+    background-color: #21315a;
     width: 50px;
     height: 50px;
-    border-radius: 50px;
-
+    border-radius: 50%;
     display: grid;
+    align-items: center;
     justify-items: center;
-    align-items: center;
+    font-size: 34px;
+    cursor: pointer;
+    transition: 0.6s ease-in;
+    z-index: 1;
+
+    animation: buttonsFloating 4s infinite alternate;
 }
-
-.bi-chevron-left {
-    left: 15px;
+.bi-chevron-right:hover,
+.bi-chevron-left:hover {
+    color: #21315a;
+    border: #21315a 2px solid;
+    background-color: #94ce5a;
 }
-
-.bi-chevron-right {
-    right: 15px;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 7fr 5fr;
-    gap: 20px;
-
-    align-items: center;
-}
-
-section {
-    width: 100%;
-    flex-shrink: 0;
-    padding: 20px 80px;
-}
-
-.section1 {
-    background-color: #242830;
-}
-
-.section2 {
-    background-color: #f5f7f8;
-}
-
-.section3 {
-    background-color: black;
-}
-
-.none {
-    display: none;
-}
-
 @media (max-width: 750px) {
-    body {
-        min-width: 400px;
-    }
-
     .container {
         grid-template-columns: 1fr;
         gap: 0;
     }
-
-    .container > img {
-        order: 1;
+    article {
+        order: -1;
     }
-
-    header img {
-        width: 100%;
+    h1 {
+        font-size: 36px;
+        padding-bottom: 15px;
     }
-
-    header h1 {
-        font-size: 40px;
-
-        padding: 10px;
-        padding-bottom: 8px;
+}
+@keyframes buttonsFloating {
+    0% {
+        transform: translateY(-50%);
+        scale: 1;
+    }
+    100% {
+        transform: translateY(-52%);
+        scale: 1.1;
     }
 }

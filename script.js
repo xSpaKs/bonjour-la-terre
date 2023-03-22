@@ -1,51 +1,40 @@
+/** @type {HTMLElement} */
 const previousButton = document.querySelector(".bi-chevron-left");
 
+/** @type {HTMLElement} */
 const nextButton = document.querySelector(".bi-chevron-right");
 
+/** @type {HTMLElement} */
 const slidesContainer = document.querySelector(".slides-container");
 
+/** @type {HTMLElement} */
 const body = document.querySelector("body");
 
-let index = 0;
+/** @type {NodeListOf<HTMLElement>} */
+const sections = document.querySelectorAll("section");
 
+let index = 0;
 const maxIndex = 2;
 
-previousButton.classList.add("none");
-body.style.backgroundColor = "#242830";
-
 const setUi = () => {
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-};
+    if (index === 0) previousButton.style.display = "none";
+    else previousButton.style.display = "grid";
 
-const setControls = () => {
-    if (index == 0) {
-        previousButton.classList.add("none");
-        body.style.backgroundColor = "#242830";
-    } else {
-        previousButton.classList.remove("none");
-        if (index == 1) {
-            body.style.backgroundColor = "#f5f7f8";
-        } else if (index == 2) {
-            body.style.backgroundColor = "black";
-        }
-    }
-    if (index == maxIndex) {
-        nextButton.classList.add("none");
-    } else {
-        nextButton.classList.remove("none");
-    }
+    if (index === maxIndex) nextButton.style.display = "none";
+    else nextButton.style.display = "grid";
+
+    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+
+    const { backgroundColor } = getComputedStyle(sections[index]);
+    body.style.backgroundColor = backgroundColor;
 };
+setUi();
 
 previousButton.addEventListener("click", () => {
     if (index > 0) index--;
-
-    setControls();
     setUi();
 });
-
 nextButton.addEventListener("click", () => {
     if (index < maxIndex) index++;
-
-    setControls();
     setUi();
 });
