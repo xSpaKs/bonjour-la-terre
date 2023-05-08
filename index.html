@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="reset.css" />
         <link rel="stylesheet" href="style.css" />
 
-        <script src="./script.js" defer></script>
+        <script src="./script.js" defer type="module"></script>
     </head>
     <body>
         <div class="wrapper">
@@ -89,11 +89,11 @@
                     </section>
                 </div>
                 <button
-                    class="bi bi-chevron-left"
+                    class="bi bi-chevron-left main-left"
                     aria-label="Diapositive précédente"
                 ></button>
                 <button
-                    class="bi bi-chevron-right"
+                    class="bi bi-chevron-right main-right"
                     aria-label="Diapositive suivante"
                 ></button>
                 <div class="puce_container">
@@ -102,6 +102,43 @@
                     <button class="puce puce3"></button>
                 </div>
             </main>
+            <div class="api_container">
+                <div class="api">
+                    <div class="api_buttons">
+                        <button class="api_button marck active">
+                            <p>Marck</p>
+                            <div class="bi bi-chevron-right api-chevron"></div>
+                        </button>
+                        <button class="api_button brest">
+                            <p>Brest</p>
+                            <div class="bi bi-chevron-right api-chevron"></div>
+                        </button>
+                        <button class="api_button machu_picchu">
+                            <p>Machu Picchu</p>
+                            <div class="bi bi-chevron-right api-chevron"></div>
+                        </button>
+                        <button class="api_button paros">
+                            <p>Paros</p>
+                            <div class="bi bi-chevron-right api-chevron"></div>
+                        </button>
+                        <button class="api_button antarctique">
+                            <p>Antarctique</p>
+                            <div class="bi bi-chevron-right api-chevron"></div>
+                        </button>
+                        <div class="empty"></div>
+                    </div>
+                    <div class="api_info">
+                        <p class="weather"></p>
+                        <p class="temperature"></p>
+                        <p class="loading">Chargement...</p>
+                        <img
+                            src="./weather-icons/01d.svg"
+                            alt="Icon of the location's weather"
+                            class="icon"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
