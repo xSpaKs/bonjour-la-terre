@@ -1,5 +1,7 @@
 # 🌤️ Intégration Maquette + API Météo
 
+https://lovely-daffodil-3c13fb.netlify.app
+
 Ce projet front-end avait pour objectif de **reproduire une maquette fournie** en HTML/CSS, incluant :
 
 - 🎠 Un **carousel** d’éléments défilants
